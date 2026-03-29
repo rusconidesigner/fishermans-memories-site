@@ -1,1 +1,330 @@
-<h1>Benvenuto su Fisherman's Memories!</h1>
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisherman's Memories | Il tuo diario di pesca definitivo</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        darkBg: '#09090b',
+                        cardBg: '#18181b',
+                        cardBorder: '#27272a',
+                        brandBlue: '#044f78',
+                        brandMagenta: '#1ba5c4'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glow-bg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 1200px;
+            background: radial-gradient(ellipse at top, rgba(4,79,120,0.65) 0%, rgba(9,9,11,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* 🪄 STILI ESSENZIALI MAILERLITE */
+        .ml-form-embedSubmitLoad {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+        }
+        .ml-form-embedSubmitLoad:after {
+          content: " ";
+          display: block;
+          width: 11px;
+          height: 11px;
+          margin: 1px;
+          border-radius: 50%;
+          border: 3px solid #fff;
+          border-color: #ffffff #ffffff #ffffff transparent;
+          animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+        }
+        @keyframes ml-form-embedSubmitLoad {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        .ml-error input {
+            border-color: #ef4444 !important;
+        }
+        @media screen and (max-width: 480px) {
+          .g-recaptcha {
+            transform: scale(0.85);
+            -webkit-transform: scale(0.85);
+            transform-origin: center center;
+            -webkit-transform-origin: center center;
+          }
+        }
+
+        /* STILI CAROSELLO FADE */
+        .carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+        }
+        .carousel-item.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .text-fade {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.8s ease-in-out;
+        }
+        .text-fade.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body class="bg-darkBg text-zinc-300 font-sans antialiased overflow-x-hidden selection:bg-brandBlue selection:text-white relative">
+
+    <div class="glow-bg"></div>
+
+    <nav class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center relative z-10">
+        <div class="flex items-center gap-3">
+            <img src="images/icona_app.png" alt="Icona App" class="w-10 h-10 rounded-xl shadow-lg object-cover flex-shrink-0">
+            <img src="images/header_logo_vet_dark.svg" alt="Fisherman's Memories" class="w-auto h-auto max-w-[180px] sm:max-w-[250px] md:max-w-[300px]">
+        </div>
+        
+        <div class="flex items-center gap-4 sm:gap-6 ml-4">
+            <a href="mailto:support@fishermansmemories.app" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex-shrink-0">
+                Supporto
+            </a>
+            
+            <div class="flex items-center gap-2 text-sm font-bold border-l border-zinc-800 pl-4 sm:pl-6">
+                <span class="text-white cursor-default">IT</span>
+                <span class="text-zinc-700 font-normal">/</span>
+                <a href="index-en.html" class="text-zinc-500 hover:text-white transition-colors" title="Switch to English">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-6 pt-20 pb-12 text-center relative z-10">
+        <div class="inline-block mb-4 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/50 text-xs font-semibold text-zinc-300 tracking-wide uppercase">
+            🚀 Beta Chiusa Disponibile
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+            Ogni lancio, una storia. <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta">Cattura il momento<br>non solo il pesce.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Registra le tue catture in pochi semplici click! Visualizzale sulla mappa e crea le tue statitstiche personalizzate. Tutto in una sola app.
+        </p>
+        
+        <div id="mlb2-39143886" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39143886 max-w-lg mx-auto mb-4">
+            <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                    <form class="ml-block-form flex flex-col gap-4" action="https://assets.mailerlite.com/jsonp/2230035/forms/183272569290360454/subscribe" data-code="" method="post" target="_blank">
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 items-center justify-center w-full">
+                            <div class="ml-form-fieldRow w-full sm:w-auto flex-1">
+                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                    <input aria-label="email" aria-required="true" type="email" class="w-full px-6 py-4 rounded-full bg-zinc-900/80 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-brandMagenta focus:ring-1 focus:ring-brandMagenta transition-all shadow-inner" data-inputmask="" name="fields[email]" placeholder="La tua email..." autocomplete="email">
+                                </div>
+                            </div>
+
+                            <div class="ml-form-embedSubmit w-full sm:w-auto flex-shrink-0">
+                                <button type="submit" class="primary w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.2)]">Ricevi il link</button>
+                                <button disabled="disabled" style="display: none;" type="button" class="loading w-full sm:w-auto px-8 py-4 rounded-full bg-zinc-700 text-zinc-400 flex items-center justify-center font-bold text-lg">
+                                    <div class="ml-form-embedSubmitLoad"></div>
+                                    <span class="sr-only">Loading...</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="ml-form-recaptcha ml-validate-required flex justify-center mt-2 w-full overflow-hidden">
+                            <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
+                        </div>
+
+                        <div class="ml-form-embedPermissions text-xs text-zinc-500">
+                            <div class="ml-form-embedPermissionsContent default privacy-policy">
+                                <p>Iscrivendoti accetti la nostra <a href="privacy.html" target="_blank" class="underline hover:text-white transition-colors">Privacy Policy</a>.</p>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="ml-submit" value="1">
+                        <input type="hidden" name="anticsrf" value="true">
+                    </form>
+                </div>
+
+                <div class="ml-form-successBody row-success" style="display: none">
+                    <div class="ml-form-successContent p-6 rounded-3xl border border-brandMagenta/30 bg-brandBlue/10 backdrop-blur-sm">
+                        <h4 class="text-2xl font-bold text-white mb-2">Ci siamo quasi! 🎣</h4>
+                        <p class="text-zinc-300">Controlla la tua casella di posta: ti abbiamo appena inviato il link per scaricare la Beta da TestFlight.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative z-10 py-16 w-full flex flex-col items-center overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[500px] bg-brandMagenta/20 rounded-[100px] blur-[100px] z-0 pointer-events-none"></div>
+
+        <div class="relative w-[300px] h-[600px] md:w-[400px] md:h-[800px] z-10 mb-8">
+            <img src="images/iphone17_black_home.png" alt="Dashboard" class="carousel-item active object-contain drop-shadow-2xl">
+            <img src="images/iphone17_black_home.png" alt="Catture" class="carousel-item object-contain drop-shadow-2xl">
+            <img src="images/iphone17_black_home.png" alt="Mappa" class="carousel-item object-contain drop-shadow-2xl">
+            <img src="images/iphone17_black_home.png" alt="Sfide" class="carousel-item object-contain drop-shadow-2xl">
+            <img src="images/iphone17_black_home.png" alt="Statistiche" class="carousel-item object-contain drop-shadow-2xl">
+        </div>
+
+        <div class="relative h-12 flex justify-center items-center text-center z-10 w-full px-4">
+            <h3 class="text-fade active absolute text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta">Tutto ciò che conta, a colpo d'occhio.</h3>
+            <h3 class="text-fade absolute text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta">Organizza le tue catture.</h3>
+            <h3 class="text-fade absolute text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta">Dove, come e quando.</h3>
+            <h3 class="text-fade absolute text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta">Sfida i tuoi amici.</h3>
+            <h3 class="text-fade absolute text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta">Analizza i tuoi dati.</h3>
+        </div>
+        
+        <div class="flex gap-2 mt-8 z-10">
+            <div class="w-2 h-2 rounded-full bg-brandMagenta transition-all duration-300 indicator"></div>
+            <div class="w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300 indicator"></div>
+            <div class="w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300 indicator"></div>
+            <div class="w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300 indicator"></div>
+            <div class="w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300 indicator"></div>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 pt-12 pb-20 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="col-span-1 md:col-span-2 bg-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col justify-center">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brandBlue opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-opacity"></div>
+                
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30 border border-white/10 group-hover:scale-110 transition-transform">
+                    <img src="images/meteo.svg" alt="Icona Meteo" class="w-8 h-8 object-contain drop-shadow-sm">
+                </div>
+                
+                <h3 class="text-2xl font-bold text-white mb-3 relative z-10 hover:text-blue-400 transition-colors">GPS, Meteo e dati marini</h3>
+                <p class="text-zinc-400 max-w-xl relative z-10 text-lg">L'app scarica automaticamente i dati meteo in base alla tua posizione, nell'istante esatto in cui registri la cattura.</p>
+            </div>
+
+            <div class="col-span-1 bg-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-emerald-500 opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity"></div>
+                
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/30 border border-white/10 group-hover:scale-110 transition-transform">
+                    <img src="images/map.svg" alt="Icona Mappa" class="w-8 h-8 object-contain drop-shadow-sm">
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mb-3 hover:text-emerald-400 transition-colors">Mappe Interattive</h3>
+                <p class="text-zinc-400 flex-grow">Analizza le tue aree di pesca, scopri gli spot più redditizi e gestisci i tuoi luoghi con precisione.</p>
+            </div>
+
+            <div class="col-span-1 bg-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-brandMagenta opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-opacity"></div>
+                
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 border border-white/10 group-hover:scale-110 transition-transform">
+                    <img src="images/chart.svg" alt="Icona Statistiche" class="w-8 h-8 object-contain drop-shadow-sm">
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mb-3 hover:text-pink-400 transition-colors">Statistiche Avanzate</h3>
+                <p class="text-zinc-400 flex-grow">Grafici chiari e analytics approfondite. Trasforma il tuo diario in pura strategia. Scopri quando, dove e come hai più probabilità di successo.</p>
+            </div>
+
+            <div class="col-span-1 bg-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-amber-500 opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity"></div>
+                
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center mb-6 shadow-lg shadow-orange-500/30 border border-white/10 group-hover:scale-110 transition-transform">
+                    <img src="images/trophy.svg" alt="Icona Trofeo" class="w-8 h-8 object-contain drop-shadow-sm">
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mb-3 hover:text-orange-400 transition-colors">Sfide Offline</h3>
+                <p class="text-zinc-400 flex-grow">Accetta il guanto di sfida, batti i record dei tuoi amici e lancia la tua contro-sfida.</p>
+            </div>
+
+            <div class="col-span-1 bg-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-zinc-400 opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity"></div>
+                
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-500 to-slate-400 flex items-center justify-center mb-6 shadow-lg shadow-zinc-500/30 border border-white/10 group-hover:scale-110 transition-transform">
+                    <img src="images/lock.svg" alt="Icona Privacy" class="w-8 h-8 object-contain drop-shadow-sm">
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mb-3 hover:text-zinc-400 transition-colors">100% Privacy</h3>
+                <p class="text-zinc-400 flex-grow">I tuoi spot segreti restano tuoi. I dati risiedono sul tuo telefono e si sincronizzano tramite il tuo iCloud.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="border-t border-zinc-800 mt-8 relative z-10">
+        <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <img src="images/icona_app.png" alt="Icona" class="w-8 h-8 rounded-lg shadow-sm object-cover">
+                <span class="text-zinc-400 font-medium">© 2026 Fisherman's Memories.</span>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-zinc-500 font-medium">
+                <a href="mailto:hello@fishermansmemories.app" class="hover:text-white transition-colors">hello@fishermansmemories.app</a>
+                <a href="mailto:dev@fishermansmemories.app" class="hover:text-white transition-colors">Sviluppo</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function ml_webform_success_39143886() {
+          var $ = ml_jQuery || jQuery;
+          $('.ml-subscribe-form-39143886 .row-success').fadeIn();
+          $('.ml-subscribe-form-39143886 .row-form').hide();
+        }
+    </script>
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+    <script>
+        fetch("https://assets.mailerlite.com/jsonp/2230035/forms/183272569290360454/takel")
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.carousel-item');
+            const texts = document.querySelectorAll('.text-fade');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentIndex = 0;
+            const totalItems = images.length;
+
+            setInterval(() => {
+                // Rimuovi classe active da tutti
+                images.forEach(img => img.classList.remove('active'));
+                texts.forEach(txt => txt.classList.remove('active'));
+                indicators.forEach(ind => {
+                    ind.classList.remove('bg-brandMagenta');
+                    ind.classList.add('bg-zinc-700');
+                });
+
+                // Calcola il prossimo indice
+                currentIndex = (currentIndex + 1) % totalItems;
+
+                // Aggiungi classe active a quello corrente
+                images[currentIndex].classList.add('active');
+                texts[currentIndex].classList.add('active');
+                indicators[currentIndex].classList.remove('bg-zinc-700');
+                indicators[currentIndex].classList.add('bg-brandMagenta');
+            }, 4000); // Cambia ogni 4 secondi
+        });
+    </script>
+
+</body>
+</html>
