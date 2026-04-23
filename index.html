@@ -205,7 +205,7 @@
     <section class="relative z-10 py-16 w-full flex flex-col items-center overflow-hidden">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[500px] bg-brandMagenta/20 rounded-[100px] blur-[100px] z-0 pointer-events-none"></div>
 
-        <div class="relative w-[300px] h-[600px] md:w-[400px] md:h-[800px] z-10 mb-8">
+        <div id="carousel-container" class="relative w-[300px] h-[600px] md:w-[400px] md:h-[800px] z-10 mb-8 touch-pan-y">
             <img src="images/iphone17_black_home.png" alt="Dashboard" class="carousel-item active object-contain drop-shadow-2xl">
             <img src="images/iphone17_black_lista.png" alt="Catture" class="carousel-item object-contain drop-shadow-2xl">
             <img src="images/iphone17_black_dettaglio.png" alt="Mappa" class="carousel-item object-contain drop-shadow-2xl">
@@ -221,12 +221,12 @@
             <h3 class="text-fade absolute text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta">Analizza i tuoi dati.</h3>
         </div>
         
-        <div class="flex gap-2 mt-8 z-10">
-            <div class="w-2 h-2 rounded-full bg-brandMagenta transition-all duration-300 indicator"></div>
-            <div class="w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300 indicator"></div>
-            <div class="w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300 indicator"></div>
-            <div class="w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300 indicator"></div>
-            <div class="w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300 indicator"></div>
+        <div class="flex gap-4 mt-8 z-10 py-2 px-4 rounded-full bg-zinc-900/50 border border-zinc-800 backdrop-blur-sm">
+            <div class="w-2.5 h-2.5 rounded-full bg-brandMagenta transition-all duration-300 indicator cursor-pointer hover:scale-150"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-zinc-700 transition-all duration-300 indicator cursor-pointer hover:scale-150"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-zinc-700 transition-all duration-300 indicator cursor-pointer hover:scale-150"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-zinc-700 transition-all duration-300 indicator cursor-pointer hover:scale-150"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-zinc-700 transition-all duration-300 indicator cursor-pointer hover:scale-150"></div>
         </div>
     </section>
 
@@ -331,11 +331,19 @@
             const images = document.querySelectorAll('.carousel-item');
             const texts = document.querySelectorAll('.text-fade');
             const indicators = document.querySelectorAll('.indicator');
+            const carouselContainer = document.getElementById('carousel-container');
+            
             let currentIndex = 0;
             const totalItems = images.length;
+            let autoPlayInterval;
 
-            setInterval(() => {
-                // Rimuovi classe active da tutti
+            // 🪄 Funzione principale per cambiare slide
+            function goToSlide(index) {
+                // Gestione loop (se va sotto zero o oltre il limite)
+                if (index < 0) index = totalItems - 1;
+                if (index >= totalItems) index = 0;
+
+                // Rimuovi lo stato attivo da tutti
                 images.forEach(img => img.classList.remove('active'));
                 texts.forEach(txt => txt.classList.remove('active'));
                 indicators.forEach(ind => {
@@ -343,15 +351,65 @@
                     ind.classList.add('bg-zinc-700');
                 });
 
-                // Calcola il prossimo indice
-                currentIndex = (currentIndex + 1) % totalItems;
+                // Aggiorna l'indice
+                currentIndex = index;
 
-                // Aggiungi classe active a quello corrente
+                // Assegna lo stato attivo al nuovo elemento
                 images[currentIndex].classList.add('active');
                 texts[currentIndex].classList.add('active');
                 indicators[currentIndex].classList.remove('bg-zinc-700');
                 indicators[currentIndex].classList.add('bg-brandMagenta');
-            }, 4000); // Cambia ogni 4 secondi
+            }
+
+            // ⏱️ Gestione Autoplay (con reset intelligente)
+            function startAutoPlay() {
+                clearInterval(autoPlayInterval); // Pulisce il timer precedente
+                autoPlayInterval = setInterval(() => {
+                    goToSlide(currentIndex + 1);
+                }, 4000);
+            }
+
+            // Inizializza l'autoplay all'avvio
+            startAutoPlay();
+
+            // 🖱️ AZIONE MANUALE 1: Click sui pallini
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    startAutoPlay(); // Resetta il timer così non salta via subito
+                });
+            });
+
+            // 📱 AZIONE MANUALE 2: Swipe su Mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            if (carouselContainer) {
+                carouselContainer.addEventListener('touchstart', e => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, {passive: true});
+
+                carouselContainer.addEventListener('touchend', e => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                }, {passive: true});
+            }
+
+            function handleSwipe() {
+                const swipeThreshold = 50; // Quanti pixel deve scorrere il dito per valere come swipe
+                
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe verso Sinistra (Avanti)
+                    goToSlide(currentIndex + 1);
+                    startAutoPlay();
+                }
+                
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe verso Destra (Indietro)
+                    goToSlide(currentIndex - 1);
+                    startAutoPlay();
+                }
+            }
         });
     </script>
 
