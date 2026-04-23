@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Fisherman's Memories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        darkBg: '#09090b',
+                        cardBg: '#18181b',
+                        cardBorder: '#27272a',
+                        brandBlue: '#044f78',
+                        brandMagenta: '#1ba5c4'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-bg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 800px;
+            background: radial-gradient(ellipse at top, rgba(4,79,120,0.4) 0%, rgba(9,9,11,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-zinc-300 font-sans antialiased overflow-x-hidden selection:bg-brandBlue selection:text-white relative">
+    <div class="glow-bg"></div>
+
+    <nav class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center relative z-10">
+        <div class="flex items-center gap-3">
+            <a href="index-en.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <img src="images/icona_app.png" alt="Icon App" class="w-10 h-10 rounded-xl shadow-lg object-cover flex-shrink-0">
+                <img src="images/header_logo_vet_2R_dark.svg" alt="Fisherman's Memories" class="block sm:hidden w-auto h-9">
+                <img src="images/header_logo_vet_dark.svg" alt="Fisherman's Memories" class="hidden sm:block w-auto h-auto sm:max-w-[250px] md:max-w-[300px]">
+            </a>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-6 ml-auto h-10 justify-between">
+            <div class="flex items-center gap-4 sm:gap-6">
+                <a href="index-en.html" class="text-zinc-400 hover:text-white transition-colors flex items-center" title="Home">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </a>
+                <a href="#" class="secure-mail text-sm font-medium text-zinc-400 hover:text-white transition-colors" data-user="support" data-domain="fishermansmemories.app">Support</a>
+            </div>
+            <div class="flex items-center gap-2 text-sm font-bold sm:border-l sm:border-zinc-800 sm:pl-6">
+                <a href="privacy.html" class="text-zinc-500 hover:text-white transition-colors">IT</a>
+                <span class="text-zinc-700 font-normal">/</span>
+                <span class="text-white cursor-default">EN</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-cardBg border border-cardBorder rounded-3xl p-8 md:p-12 shadow-2xl">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta mb-2">Privacy Policy</h1>
+            <p class="text-zinc-500 text-sm italic mb-10">Last updated: April 24, 2026</p>
+
+            <div class="space-y-8 text-zinc-400 leading-relaxed">
+                <p>This Privacy Policy describes how the <strong class="text-white">Fisherman's Memories</strong> application handles its users' information. The application was designed and developed with total privacy protection at its core: personal data, catches, and fishing location coordinates remain the exclusive property of the user. Below we outline the transparency principles governing the app's operation, confirming that no sensitive information is collected, stored, or analyzed by our systems.</p>
+
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-4 border-b border-zinc-800 pb-2">1. Data Collection and Storage</h2>
+                    <p class="mb-4"><strong class="text-zinc-200">No Proprietary Servers:</strong> Fisherman's Memories does not use proprietary or third-party server infrastructures to collect, process, or analyze the generated data. All information (catches, technical details, equipment) is saved exclusively within the local memory of the user's device.</p>
+                    <p><strong class="text-zinc-200">iCloud Synchronization:</strong> If the user has enabled iCloud services on their device, the application uses the private database (CloudKit) to synchronize information across devices associated with the same Apple ID. The development team has no access whatsoever to this archive. The security, integrity, and encryption of the data are fully guaranteed and managed by Apple's native infrastructure and security protocols.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-4 border-b border-zinc-800 pb-2">2. Location Data (Geolocation)</h2>
+                    <p class="mb-4">The application uses geolocation services to allow accurate recording of catch locations, map visualization, and location-based notifications. Such data is processed in strict compliance with user privacy according to the following principles:</p>
+                    <ul class="list-disc list-inside space-y-3">
+                        <li><strong class="text-zinc-200">In-use and Background Access:</strong> Location authorization is requested for active app usage and, subject to the user's explicit consent, in the background for proximity alerts (geofencing).</li>
+                        <li><strong class="text-zinc-200">Georeferenced Notifications:</strong> Background location monitoring is solely for triggering local push notifications (e.g., when the user approaches a saved fishing spot). The processing of such coordinates occurs entirely locally on the device: the application does not record a location history and does not transmit tracking data to remote servers.</li>
+                        <li><strong class="text-zinc-200">Absolute Privacy:</strong> The geographic coordinates of saved locations remain strictly confined to the user's device and their respective iCloud account. Such data is in no way shared with third parties, nor transmitted to other users or public databases.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-4 border-b border-zinc-800 pb-2">3. Third-Party Services and Environmental Data</h2>
+                    <p class="mb-4">To automatically integrate weather and marine conditions into the records, the application queries external services by transmitting solely the geographic coordinates and timestamp in an anonymous format. No personal or device-identifying data is ever shared with these providers.</p>
+                    <p>Environmental data is provided by, and subject to the privacy policies of, the respective services:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>Weather data provided by <strong class="text-zinc-200">Apple Weather</strong>.</li>
+                        <li>Marine data provided by <strong class="text-zinc-200">Open-Meteo.com</strong>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-4 border-b border-zinc-800 pb-2">4. Media Management (Photographs)</h2>
+                    <p>Media content, such as photographs captured or imported by the user within the application, are stored exclusively in the device's local memory and, if the relevant feature is enabled, synchronized via the user's personal iCloud services. The application does not perform any automated image processing (including facial or biometric recognition), nor does it upload or analyze such content on remote servers managed by the development team or third parties.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-4 border-b border-zinc-800 pb-2">5. Absence of Advertising and Commercial Tracking</h2>
+                    <p>The application is ad-free and does not integrate any tracking software (trackers) for commercial, profiling, or marketing purposes. The development team guarantees that no personal or usage data will ever be transferred, alienated, or sold to third parties.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-4 border-b border-zinc-800 pb-2">6. Data Retention, Management, and Deletion</h2>
+                    <p>Since the application's infrastructure does not rely on proprietary servers for storage, the user retains exclusive control over their data. To permanently delete the collected information, the user simply needs to delete the individual records within the app or uninstall the application from their device. If cloud synchronization is active, the user can remove the associated data directly from their Apple iCloud storage settings.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-white mb-4 border-b border-zinc-800 pb-2">7. Contacts and Support Requests</h2>
+                    <p class="mb-4">For any clarifications regarding this Privacy Policy, to exercise data protection rights, or for technical support requests, the user can contact the development team at the following email address:</p>
+                    <p><a href="#" class="secure-mail show-text font-bold text-brandMagenta hover:text-white transition-colors text-lg" data-user="support" data-domain="fishermansmemories.app"></a></p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-zinc-800 mt-8 relative z-10">
+        <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <img src="images/icona_app.png" alt="Icon" class="w-8 h-8 rounded-lg shadow-sm object-cover">
+                <span class="text-zinc-400 font-medium">© 2026 Fisherman's Memories.</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-zinc-500 font-medium">
+                <a href="#" class="secure-mail hover:text-white transition-colors" data-user="hello" data-domain="fishermansmemories.app">Contact</a>
+                <a href="#" class="secure-mail hover:text-white transition-colors" data-user="dev" data-domain="fishermansmemories.app">Development</a>
+                <a href="privacy-en.html" class="hover:text-white transition-colors underline">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mailLinks = document.querySelectorAll('.secure-mail');
+            mailLinks.forEach(link => {
+                const user = link.getAttribute('data-user');
+                const domain = link.getAttribute('data-domain');
+                if (user && domain) {
+                    const email = `${user}@${domain}`;
+                    link.addEventListener('click', e => { e.preventDefault(); window.location.href = `mailto:${email}`; });
+                    if (link.classList.contains('show-text')) link.textContent = email;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

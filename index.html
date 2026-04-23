@@ -114,10 +114,7 @@
         </div>
         
         <div class="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-6 ml-auto">
-            <a href="mailto:support@fishermansmemories.app" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex-shrink-0">
-                Supporto
-            </a>
-            
+            <a href="#" class="secure-mail text-sm font-medium text-zinc-400 hover:text-white transition-colors flex-shrink-0" data-user="support" data-domain="fishermansmemories.app">Supporto</a>            
             <div class="flex items-center gap-2 text-sm font-bold sm:border-l sm:border-zinc-800 sm:pl-6">
                 <span class="text-white cursor-default">IT</span>
                 <span class="text-zinc-700 font-normal">/</span>
@@ -307,8 +304,8 @@
             </div>
             
             <div class="flex flex-wrap justify-center gap-6 text-sm text-zinc-500 font-medium">
-                <a href="mailto:hello@fishermansmemories.app" class="hover:text-white transition-colors">hello@fishermansmemories.app</a>
-                <a href="mailto:dev@fishermansmemories.app" class="hover:text-white transition-colors">Sviluppo</a>
+                <a href="#" class="secure-mail hover:text-white transition-colors" data-user="hello" data-domain="fishermansmemories.app">Contatti</a>
+                <a href="#" class="secure-mail hover:text-white transition-colors" data-user="dev" data-domain="fishermansmemories.app">Sviluppo</a>
                 <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
             </div>
         </div>
@@ -412,6 +409,29 @@
             }
         });
     </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Blindatura Anti-Spam Email
+        const mailLinks = document.querySelectorAll('.secure-mail');
+        mailLinks.forEach(link => {
+            const user = link.getAttribute('data-user');
+            const domain = link.getAttribute('data-domain');
+            const emailAddress = `${user}@${domain}`;
+            
+            // Crea il comando mailto reale
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = `mailto:${emailAddress}`;
+            });
+            
+            // Se c'è la classe 'show-text', stampa la mail a video per l'utente umano
+            if (link.classList.contains('show-text')) {
+                link.textContent = emailAddress;
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
