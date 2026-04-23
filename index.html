@@ -127,23 +127,42 @@
         <div class="inline-block mb-4 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/50 text-xs font-semibold text-zinc-300 tracking-wide uppercase">
             🚀 Beta Chiusa Disponibile
         </div>
+        <!-- 
         <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
             Ogni lancio, una storia. <br>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta">Cattura il momento<br>non solo il pesce.</span>
         </h1>
+        -->
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+            Ogni lancio, una storia. <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta">Cattura il momento<br>non solo il </span>
+            <img src="images/fish.png" alt="pesce" class="inline-block h-[0.85em] w-auto align-middle -translate-y-2 drop-shadow-lg">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandMagenta">.</span>
+        </h1>
+        
         <p class="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Registra le tue catture in pochi semplici click! Visualizzale sulla mappa e crea le tue statitstiche personalizzate. Tutto in una sola app.
         </p>
         
-        <div id="mlb2-39143886" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39143886 max-w-lg mx-auto mb-4">
+        <div id="mlb2-39143886" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39143886 max-w-2xl mx-auto mb-4">
             <div class="ml-form-embedWrapper embedForm">
                 <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
                     <form class="ml-block-form flex flex-col gap-4" action="https://assets.mailerlite.com/jsonp/2230035/forms/183272569290360454/subscribe" data-code="" method="post" target="_blank">
                         
                         <div class="flex flex-col sm:flex-row gap-3 items-center justify-center w-full">
+                            
                             <div class="ml-form-fieldRow w-full sm:w-auto flex-1">
                                 <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                                     <input aria-label="email" aria-required="true" type="email" class="w-full px-6 py-4 rounded-full bg-zinc-900/80 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-brandMagenta focus:ring-1 focus:ring-brandMagenta transition-all shadow-inner" data-inputmask="" name="fields[email]" placeholder="La tua email..." autocomplete="email">
+                                </div>
+                            </div>
+
+                            <div class="ml-form-fieldRow w-full sm:w-28 flex-shrink-0">
+                                <div class="ml-field-group">
+                                    <select name="fields[language]" class="w-full px-5 py-4 rounded-full bg-zinc-900/80 border border-zinc-700 text-white focus:outline-none focus:border-brandMagenta focus:ring-1 focus:ring-brandMagenta transition-all shadow-inner appearance-none cursor-pointer font-medium" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%239ca3af%22%20d%3D%22M5.293%207.293a1%201%200%20011.414%200L10%2010.586l3.293-3.293a1%201%200%20111.414%201.414l-4%204a1%201%200%2001-1.414%200l-4-4a1%201%200%20010-1.414z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.2em;">
+                                        <option value="IT" selected>🇮🇹 IT</option>
+                                        <option value="EN">🇬🇧 EN</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -212,59 +231,67 @@
     <section class="max-w-6xl mx-auto px-6 pt-12 pb-20 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <div class="col-span-1 md:col-span-2 bg-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col justify-center">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-brandBlue opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-opacity"></div>
-                
+            <div class="col-span-1 md:col-span-2 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/40 to-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col justify-center">
                 <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30 border border-white/10 group-hover:scale-110 transition-transform">
                     <img src="images/meteo.svg" alt="Icona Meteo" class="w-8 h-8 object-contain drop-shadow-sm">
                 </div>
                 
                 <h3 class="text-2xl font-bold text-white mb-3 relative z-10 hover:text-blue-400 transition-colors">GPS, Meteo e dati marini</h3>
-                <p class="text-zinc-400 max-w-xl relative z-10 text-lg">L'app scarica automaticamente i dati meteo in base alla tua posizione, nell'istante esatto in cui registri la cattura.</p>
+                <p class="text-zinc-400 max-w-xl relative z-10 text-sm sm:text-base leading-relaxed">L'app scarica automaticamente i dati meteo in base alla tua posizione, nell'istante esatto in cui registri la cattura. Nel caso ti trovassi in mare aperto o in alta montagna, quindi in assenza di campo, non ti preoccupare! Potrai comunque salvare la tua cattura e quando il segnale o il WiFi sarà nuovamente disponibile, l'app aggiornerà i dati in autonomia.</p>
             </div>
 
-            <div class="col-span-1 bg-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
-                <div class="absolute top-0 right-0 w-40 h-40 bg-emerald-500 opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity"></div>
-                
+            <div class="col-span-1 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/40 to-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
                 <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/30 border border-white/10 group-hover:scale-110 transition-transform">
                     <img src="images/map.svg" alt="Icona Mappa" class="w-8 h-8 object-contain drop-shadow-sm">
                 </div>
                 
                 <h3 class="text-xl font-bold text-white mb-3 hover:text-emerald-400 transition-colors">Mappe Interattive</h3>
-                <p class="text-zinc-400 flex-grow">Analizza le tue aree di pesca, scopri gli spot più redditizi e gestisci i tuoi luoghi con precisione.</p>
+                <p class="text-zinc-400 flex-grow text-sm sm:text-base leading-relaxed">Analizza le tue aree di pesca, scopri gli spot più redditizi e gestisci i tuoi luoghi con precisione.</p>
             </div>
 
-            <div class="col-span-1 bg-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
-                <div class="absolute top-0 right-0 w-40 h-40 bg-brandMagenta opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-opacity"></div>
-                
+            <div class="col-span-1 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/40 to-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
                 <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 border border-white/10 group-hover:scale-110 transition-transform">
                     <img src="images/chart.svg" alt="Icona Statistiche" class="w-8 h-8 object-contain drop-shadow-sm">
                 </div>
                 
                 <h3 class="text-xl font-bold text-white mb-3 hover:text-pink-400 transition-colors">Statistiche Avanzate</h3>
-                <p class="text-zinc-400 flex-grow">Grafici chiari e analytics approfondite. Trasforma il tuo diario in pura strategia. Scopri quando, dove e come hai più probabilità di successo.</p>
+                <p class="text-zinc-400 flex-grow text-sm sm:text-base leading-relaxed">Grafici chiari e analytics approfondite. Trasforma il tuo diario in pura strategia. Scopri quando, dove e come hai più probabilità di successo.</p>
             </div>
 
-            <div class="col-span-1 bg-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
-                <div class="absolute top-0 right-0 w-40 h-40 bg-amber-500 opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity"></div>
-                
+            <div class="col-span-1 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/40 to-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
                 <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center mb-6 shadow-lg shadow-orange-500/30 border border-white/10 group-hover:scale-110 transition-transform">
                     <img src="images/trophy.svg" alt="Icona Trofeo" class="w-8 h-8 object-contain drop-shadow-sm">
                 </div>
                 
                 <h3 class="text-xl font-bold text-white mb-3 hover:text-orange-400 transition-colors">Sfide Offline</h3>
-                <p class="text-zinc-400 flex-grow">Accetta il guanto di sfida, batti i record dei tuoi amici e lancia la tua contro-sfida.</p>
+                <p class="text-zinc-400 flex-grow text-sm sm:text-base leading-relaxed">Accetta il guanto di sfida, batti i record dei tuoi amici e lancia la tua contro-sfida.</p>
             </div>
 
-            <div class="col-span-1 bg-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
-                <div class="absolute top-0 right-0 w-40 h-40 bg-zinc-400 opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity"></div>
-                
+            <div class="col-span-1 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/40 to-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
                 <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-500 to-slate-400 flex items-center justify-center mb-6 shadow-lg shadow-zinc-500/30 border border-white/10 group-hover:scale-110 transition-transform">
                     <img src="images/lock.svg" alt="Icona Privacy" class="w-8 h-8 object-contain drop-shadow-sm">
                 </div>
                 
                 <h3 class="text-xl font-bold text-white mb-3 hover:text-zinc-400 transition-colors">100% Privacy</h3>
-                <p class="text-zinc-400 flex-grow">I tuoi spot segreti restano tuoi. I dati risiedono sul tuo telefono e si sincronizzano tramite il tuo iCloud.</p>
+                <p class="text-zinc-400 flex-grow text-sm sm:text-base leading-relaxed">I tuoi spot segreti restano tuoi. I dati risiedono sul tuo telefono e si sincronizzano tramite il tuo iCloud.</p>
+            </div>
+
+            <div class="col-span-1 md:col-span-2 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/40 to-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col justify-center">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-lime-400 to-yellow-400 flex items-center justify-center mb-6 shadow-lg shadow-lime-500/30 border border-white/10 group-hover:scale-110 transition-transform">
+                    <img src="images/ruler.svg" alt="Icona Righello" class="w-8 h-8 object-contain drop-shadow-sm">
+                </div>
+                
+                <h3 class="text-2xl font-bold text-white mb-3 relative z-10 hover:text-lime-400 transition-colors">Misurazione AR & LiDAR</h3>
+                <p class="text-zinc-400 max-w-xl relative z-10 text-sm sm:text-base leading-relaxed">Misura la tua cattura in un istante sfruttando la realtà aumentata. E se possiedi un iPhone Pro (modello 12 o superiore), sfrutta il sensore LiDAR integrato per una scansione millimetrica in qualsiasi condizione di luce.</p>
+            </div>
+
+            <div class="col-span-1 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/40 to-cardBg border border-cardBorder rounded-3xl p-8 hover:border-zinc-700 transition-colors group overflow-hidden relative flex flex-col">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-800 to-purple-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 border border-white/10 group-hover:scale-110 transition-transform">
+                    <img src="images/peso.svg" alt="Icona Bilancia" class="w-8 h-8 object-contain drop-shadow-sm">
+                </div>
+                
+                <h3 class="text-xl font-bold text-white mb-3 hover:text-purple-400 transition-colors">Peso Stimato</h3>
+                <p class="text-zinc-400 flex-grow text-sm sm:text-base leading-relaxed">Grazie alla formula automatica basata sulla lunghezza, ricaviamo una stima accurata del peso usando i coefficienti matematici specifici per ogni specie.</p>
             </div>
 
         </div>
