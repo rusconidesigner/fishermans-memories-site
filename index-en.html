@@ -152,18 +152,18 @@
                         
                         <div class="flex flex-col sm:flex-row gap-3 items-center justify-center w-full">
                             
-                            <div class="ml-form-fieldRow w-full sm:w-auto flex-1">
-                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                                    <input aria-label="email" aria-required="true" type="email" class="w-full px-6 py-4 rounded-full bg-zinc-900/80 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-brandMagenta focus:ring-1 focus:ring-brandMagenta transition-all shadow-inner" data-inputmask="" name="fields[email]" placeholder="Your email..." autocomplete="email">
-                                </div>
-                            </div>
-
                             <div class="ml-form-fieldRow w-full sm:w-28 flex-shrink-0">
                                 <div class="ml-field-group">
-                                    <select name="fields[language]" class="w-full px-5 py-4 rounded-full bg-zinc-900/80 border border-zinc-700 text-white focus:outline-none focus:border-brandMagenta focus:ring-1 focus:ring-brandMagenta transition-all shadow-inner appearance-none cursor-pointer font-medium" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%239ca3af%22%20d%3D%22M5.293%207.293a1%201%200%20011.414%200L10%2010.586l3.293-3.293a1%201%200%20111.414%201.414l-4%204a1%201%200%2001-1.414%200l-4-4a1%201%200%20010-1.414z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.2em;">
+                                    <select name="fields[language]" onchange="if(this.value === 'IT') window.location.href='index.html';" class="w-full px-5 py-4 rounded-full bg-zinc-900/80 border border-zinc-700 text-white focus:outline-none focus:border-brandMagenta focus:ring-1 focus:ring-brandMagenta transition-all shadow-inner appearance-none cursor-pointer font-medium" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20fill%3D%22%239ca3af%22%20d%3D%22M5.293%207.293a1%201%200%20011.414%200L10%2010.586l3.293-3.293a1%201%200%20111.414%201.414l-4%204a1%201%200%2001-1.414%200l-4-4a1%201%200%20010-1.414z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.2em;">
                                         <option value="IT">🇮🇹 IT</option>
                                         <option value="EN" selected>🇬🇧 EN</option>
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="ml-form-fieldRow w-full sm:w-auto flex-1">
+                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                    <input aria-label="email" aria-required="true" type="email" class="w-full px-6 py-4 rounded-full bg-zinc-900/80 border border-zinc-700 text-white placeholder-zinc-500 focus:outline-none focus:border-brandMagenta focus:ring-1 focus:ring-brandMagenta transition-all shadow-inner" data-inputmask="" name="fields[email]" placeholder="Your email..." autocomplete="email">
                                 </div>
                             </div>
 
